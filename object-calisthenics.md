@@ -27,7 +27,7 @@ ClassMethod UpdateProductData(ProductData As %DynamicObject) As %Status
                 }
                 else 
                 {
-                    Set Exception = ##class(%Exception.General).%New("The product price should be greather then zero...", 999)
+                    Set Exception = ##class(%Exception.General).%New("The product price should be greater than zero...", 999)
                     Throw Exception
                 }
             }
@@ -99,7 +99,7 @@ ClassMethod UpdateProductPrice(Product As CalisthenicSystem.Data.Product, NewPri
             }
             else 
             {
-                Set Exception = ##class(%Exception.General).%New("The product price should be greather then zero...", 999)
+                Set Exception = ##class(%Exception.General).%New("The product price should be greater than zero...", 999)
                 Throw Exception
             }
         }
