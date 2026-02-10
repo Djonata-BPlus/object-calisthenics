@@ -37,7 +37,7 @@ ClassMethod UpdateProductData(ProductData As %DynamicObject) As %Status
         }
         else
         {
-            Set Exception = ##class(%Exception.General).%New("Error when trying to update an product...", 999)
+            Set Exception = ##class(%Exception.General).%New("Error when trying to update a product...", 999)
             Throw Exception
         }
 
@@ -72,7 +72,7 @@ ClassMethod UpdateProductData(ProductData As %DynamicObject) As %Status
         }
         else
         {
-            Set Exception = ##class(%Exception.General).%New("Error when trying to update an product...", 999)
+            Set Exception = ##class(%Exception.General).%New("Error when trying to update a product...", 999)
             Throw Exception
         }
 
