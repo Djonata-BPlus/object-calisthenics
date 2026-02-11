@@ -2,7 +2,7 @@
 
 >  O termo object calisthenics foi apresentado pela primeira vez por Jeff Bay. E se trata de um conjunto de 9 regras/boas práticas de codificação, que visam maior legibilidade e manutenibilidade de um sistema.
 
-* **1 - Usar apenas um nível de identação por método:**
+* **1 - Usar apenas um nível de identação por método (Use only one level of indentation per method.)**
 Quanto mais níveis de identação adicionamos, mais a lógica dentro de cada um deles vai ficando complexa de acompanhar, com isso fica mais fácil erros acontecerem, abaixo segue um exemplo simples, mas sabemos que no dia a dia isso pode ficar cada vez maior.
 
 ```
@@ -90,18 +90,17 @@ ClassMethod UpdateProductPrice(Product As CalisthenicSystem.Data.Product, NewPri
     Try
     {
         //Level 0
-        If (NewPrice '= "")
+        Quit:(NewPrice '= "")
+
+        If (NewPrice > 0)
         {
             //Level 1
-            If (NewPrice > 0)
-            {
-                Set Product.Price = NewPrice
-            }
-            else 
-            {
-                Set Exception = ##class(%Exception.General).%New("The product price should be greather then zero...", 999)
-                Throw Exception
-            }
+            Set Product.Price = NewPrice
+        }
+        else 
+        {
+            Set Exception = ##class(%Exception.General).%New("The product price should be greather then zero...", 999)
+            Throw Exception
         }
     }
     Catch(Error)
@@ -112,3 +111,6 @@ ClassMethod UpdateProductPrice(Product As CalisthenicSystem.Data.Product, NewPri
 }
 
 ```
+
+* **2 - Não use else  - Don’t use the else keyword**
+X   
