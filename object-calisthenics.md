@@ -27,7 +27,7 @@ ClassMethod UpdateProductData(ProductData As %DynamicObject) As %Status
                 }
                 else 
                 {
-                    Set Exception = ##class(%Exception.General).%New("The product price should be greather then zero...", 999)
+                    Set Exception = ##class(%Exception.General).%New("The product price should be greater than zero...", 999)
                     Throw Exception
                 }
             }
@@ -37,7 +37,7 @@ ClassMethod UpdateProductData(ProductData As %DynamicObject) As %Status
         }
         else
         {
-            Set Exception = ##class(%Exception.General).%New("Error when trying to update an product...", 999)
+            Set Exception = ##class(%Exception.General).%New("Error when trying to update a product...", 999)
             Throw Exception
         }
 
@@ -72,7 +72,7 @@ ClassMethod UpdateProductData(ProductData As %DynamicObject) As %Status
         }
         else
         {
-            Set Exception = ##class(%Exception.General).%New("Error when trying to update an product...", 999)
+            Set Exception = ##class(%Exception.General).%New("Error when trying to update a product...", 999)
             Throw Exception
         }
 
@@ -95,12 +95,15 @@ ClassMethod UpdateProductPrice(Product As CalisthenicSystem.Data.Product, NewPri
         If (NewPrice > 0)
         {
             //Level 1
-            Set Product.Price = NewPrice
-        }
-        else 
-        {
-            Set Exception = ##class(%Exception.General).%New("The product price should be greather then zero...", 999)
-            Throw Exception
+            If (NewPrice > 0)
+            {
+                Set Product.Price = NewPrice
+            }
+            else 
+            {
+                Set Exception = ##class(%Exception.General).%New("The product price should be greater than zero...", 999)
+                Throw Exception
+            }
         }
     }
     Catch(Error)
@@ -111,6 +114,3 @@ ClassMethod UpdateProductPrice(Product As CalisthenicSystem.Data.Product, NewPri
 }
 
 ```
-
-* **2 - Não use else  - Don’t use the else keyword**
-X   
