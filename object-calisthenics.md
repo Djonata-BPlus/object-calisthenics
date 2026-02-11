@@ -90,7 +90,7 @@ ClassMethod UpdateProductPrice(Product As CalisthenicSystem.Data.Product, NewPri
     Try
     {
         //Level 0
-        Quit:(NewPrice '= "")
+        Quit:(NewPrice = "")
 
         If (NewPrice > 0)
         {
